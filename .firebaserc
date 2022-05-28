@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "labappsmoviles": {
+      "hosting": {
+        "app": [
+          "labappsmoviles"
+        ]
+      }
+    },
+    "appsmoviles-674fc": {
+      "hosting": {
+        "app": [
+          "appsmoviles-674fc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "appsmoviles-674fc"
+  }
+}
