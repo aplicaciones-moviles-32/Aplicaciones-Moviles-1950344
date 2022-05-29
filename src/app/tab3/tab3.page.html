@@ -54,9 +54,11 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-toolbar>
+  <ion-col *ngFor="let publicacion of publicacionesusuario">
+    <img style="width: 150px; height: 150px;" src={{publicacion.Foto}}>
 
-  </ion-toolbar>
+  </ion-col>
+  
 
   
 </ion-content>

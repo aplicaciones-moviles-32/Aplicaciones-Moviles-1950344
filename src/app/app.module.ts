@@ -19,6 +19,14 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import{AngularFireModule} from '@angular/fire/compat'
 
+
+
+
+
+
+import { Camera } from '@ionic-native/camera/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -35,7 +43,7 @@ import{AngularFireModule} from '@angular/fire/compat'
     provideRemoteConfig(() => getRemoteConfig()), 
     provideStorage(() => getStorage()),
   AngularFireModule.initializeApp(environment.firebaseConfig)],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenTrackingService,UserTrackingService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenTrackingService,UserTrackingService, Camera, ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

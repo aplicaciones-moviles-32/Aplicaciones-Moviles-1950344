@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatabaseService } from '../services/database.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,24 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(private database: DatabaseService) {}
+
+  publicacionesusuario = [
+
+  
+  ];
+
+  ngOnInit(){
+    this.database.getAll('publicacionesusuario').then(firebaseResponse => {
+      firebaseResponse.subscribe(publicacionesRef => {
+        this.publicacionesusuario = publicacionesRef.map(publicacionRef =>{
+          let publicacion=publicacionRef.payload.doc.data();
+          publicacion['id'] = publicacionRef.payload.doc.id;
+          return publicacion;
+        }
+          )
+      })
+    })
+  }
 
 }
